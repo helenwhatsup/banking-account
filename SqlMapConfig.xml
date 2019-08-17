@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<environments>
+		<environment id = "environment_id">
+			<dataSource type = "POOLED">
+				<property name = "driver" value = "oracle.jdbc.driver.OracleDriver" />
+				<property name = "url" value ="jdbc:oracle:thin:@22.11.9.160:1521/orau11g" />
+				<property name = "username" value = "dnf"/>
+				<property name = "password" value = "dnfAa11111" />
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource = "ServiceMapper.xml"/>
+		<package name = "com.intern.banking.mappers" />
+	</mappers>
+
+</configuration>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd"> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://code.alibabatech.com/schema/dubbo
+	http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<dubbo:application name="consumer" />
+	
+	<dubbo:registry address="zookeeper://22.11.11.137:2181" />
+	
+	<dubbo:reference id="bankingService" 
+			interface="com.intern.banking.service.BankingService" />
+			
+	
+	<!-- 1 -->
+	<dubbo:reference id="openService" 
+			interface="com.intern.banking.service.OpenAccountService" />
+	
+	<!-- 2 -->
+	<dubbo:reference id="transferService" 
+			interface="com.intern.banking.service.ETransferService" />
+			
+	<!-- 3 -->
+	<dubbo:reference id="closeService" 
+			interface="com.intern.banking.service.CloseAccountService" />
+	
+</beans>
